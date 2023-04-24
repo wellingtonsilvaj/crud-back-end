@@ -1,0 +1,21 @@
+<a href="/">LISTAR</a><br>
+<!-- criar link para apagar registro do BD-->
+<a href="/del-user/{{user.id}}" onclick="return confirm('TEM CERTEZA QUE DESEJA EXCLUIR ESSE REGISTRO?')">APAGAR</a><br>
+<!--criar link para editar senha-->
+<a href="/edit-password/{{user.id}}">ALTERAR A SENHA</a><br>
+
+<h1>Visualizar Usuário</h1>
+
+<!--imprimir as messagens que estão na sessão-->
+{{>_msg}}
+
+
+ID: {{user.id}}<br>
+Nome: {{user.name}}<br>
+E-mail: {{user.email}}<br>
+Telefone: {{user.telefone}}<br>
+Cadastrado: {{#formatDate user.createdAt}}{{/formatDate}}<br>
+Editado: {{#formatDateTime user.updatedAt}} {{/formatDateTime}}<br>
+
+
+<hr>

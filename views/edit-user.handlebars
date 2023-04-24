@@ -1,0 +1,24 @@
+<a href="/">LISTAR</a><br>
+
+<!--link para editar senha-->
+<a href="/edit-password/{{user.id}}">ALTERAR A SENHA</a><br>
+
+
+<h1>Editar Usuário</h1>
+
+<!--imprimir as messagens que estão na sessão-->
+{{>_msg}}
+
+<form action="/edit-user/{{user.id}}" method="POST">
+    <label>Nome: </label>
+    <input type="text" name="name" id="name" placeholder="Nome completo" value="{{user.name}}" required><br><br>
+    
+    <label>E-mail: </label>
+    <input type="email" name="email" id="email" placeholder="Melhor e-mail do usuário" value="{{user.email}}" required><br><br>
+    
+    <label>Telefone:</label>
+    <input type="tel" name="telefone" id="telefone" placeholder="digite seu numero aqui" value="{{user.telefone}}"required><br><br> 
+
+
+    <button type="submit">EDITAR</button>
+</form>

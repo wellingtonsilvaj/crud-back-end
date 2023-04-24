@@ -1,0 +1,30 @@
+<a href="/add-user">CADASTRAR</a><br><br>
+<h1>Listar Usuário</h1>
+
+<!--imprimir as messagens que estão na sessão-->
+{{>_msg}}
+
+{{#if users}}
+{{#each users}}
+ID: {{id}}<br>
+Nome: {{name}}<br>
+E-mail: {{email}}<br>
+Telefone: {{telefone}}<br>
+Cadastrado: {{#formatDate createdAt}}{{/formatDate}}<br>
+Editado: {{#formatDateTime updatedAt}} {{/formatDateTime}}<br>
+
+<!-- Criar link para visualizar detalhes do registro -->
+<a href="/view-user/{{id}}">VISUALIZAR</a><br>
+
+<!-- Criar link para editar detalhes do registro -->
+<a href="/edit-user/{{id}}">EDITAR</a><br>
+
+<!-- criar link para apagar registro do BD-->
+<a href="/del-user/{{id}}" onclick="return confirm('TEM CERTEZA QUE DESEJA EXCLUIR ESSE REGISTRO?')">APAGAR</a>
+<hr>
+
+{{/each}}
+
+    {{else}}
+        <p style="color: #f00;">ERRO: NENHUM USUÁRIO ENCONTRADO</p>
+{{/if}}

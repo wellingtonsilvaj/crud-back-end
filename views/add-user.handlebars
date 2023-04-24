@@ -1,0 +1,22 @@
+<a  href="/" >LISTAR</a><br>
+
+<h1>Cadastrar Usuário</h1>
+
+<!--imprimir as messagens que estão na sessão-->
+{{>_msg}}
+
+<form action="/add-user" method="POST">
+    <label>Nome: </label>
+    <input type="text" name="name" id="name" placeholder="Nome completo" required><br><br>
+    
+    <label>E-mail: </label>
+    <input type="email" name="email" id="email" placeholder="Melhor e-mail do usuário" required><br><br>
+    
+    <label>Telefone:</label>
+    <input type="tel" name="telefone" id="telefone" placeholder="digite seu numero aqui" required><br><br> 
+
+    <label>Senha: </label>
+    <input type="password" name="password" id="password"  autocomplete="on" placeholder="Senha com mínimo 6 caractes" required><br><br>
+
+    <button type="submit">Cadastrar</button>
+</form>
